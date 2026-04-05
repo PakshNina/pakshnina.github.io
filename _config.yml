@@ -1,10 +1,7 @@
-lsi: false
-safe: true
-source: [your repo's top level directory]
-incremental: false
+title: "Nina Pakshina"
+description: "Персональная страница Nina Pakshina на GitHub Pages."
+lang: "ru"
+url: "https://pakshnina.github.io"
+baseurl: ""
+markdown: kramdown
 highlighter: rouge
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
