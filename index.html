@@ -3,23 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Главная | Nina Pakshina</title>
-  <meta name="description" content="Персональная страница Nina Pakshina на GitHub Pages." />
+  <title>Biography | Nina Pakshina</title>
+  <meta name="description" content="Биография Nina Pakshina с контактами, навыками и фото." />
   <style>
     :root {
-      --bg-start: #0a7872;
-      --bg-end: #1192a2;
-      --surface: rgba(255, 255, 255, 0.2);
-      --surface-strong: rgba(255, 255, 255, 0.3);
-      --text-main: #f8fbfb;
-      --text-muted: #d7ecec;
-      --accent: #f05a00;
-      --border: rgba(255, 255, 255, 0.45);
-      --palette-orange: #f05a00;
-      --palette-amber: #e8b126;
-      --palette-mist: #d4cddb;
-      --palette-teal: #0f8f99;
-      --palette-deep-teal: #0b7270;
+      --bg: #f4f4f4;
+      --surface: #ffffff;
+      --text-main: #3b3b40;
+      --text-muted: #7d7d84;
+      --border: #e9e9ee;
+      --accent: #88a4cb;
     }
 
     *,
@@ -35,192 +28,220 @@
     }
 
     body {
-      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
       color: var(--text-main);
-      background: radial-gradient(circle at top right, rgba(240, 90, 0, 0.55) 0%, transparent 35%),
-        radial-gradient(circle at bottom left, rgba(232, 177, 38, 0.45) 0%, transparent 30%),
-        linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
-      line-height: 1.6;
+      font-family: "Courier New", Courier, monospace;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      width: min(920px, calc(100% - 2rem));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      padding-top: 1.5rem;
-    }
-
-    .site-header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      padding: 0.95rem 1.1rem;
-      border: 1px solid var(--border);
+    .page {
+      width: min(1120px, calc(100% - 3rem));
+      margin: 2rem auto 3rem;
       background: var(--surface);
-      border-radius: 16px;
-      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      padding: clamp(1.25rem, 2.5vw, 2.5rem);
     }
 
-    .site-title {
+    .bio-title {
       margin: 0;
-      font-size: clamp(1.25rem, 2vw, 1.6rem);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      color: #2f3036;
       letter-spacing: 0.01em;
     }
 
-    .site-nav {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
+    .bio-head-line {
+      height: 1px;
+      border: 0;
+      background: var(--border);
+      margin: 1.1rem 0 1.6rem;
     }
 
-    .nav-link {
-      display: inline-block;
-      padding: 0.45rem 0.85rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      color: var(--text-main);
-      text-decoration: none;
-      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .nav-link:hover {
-      background: var(--surface-strong);
-      border-color: var(--border);
-      transform: translateY(-1px);
-    }
-
-    .nav-link-active {
-      background: rgba(232, 177, 38, 0.3);
-      border-color: rgba(240, 90, 0, 0.6);
-    }
-
-    .content {
-      padding: 2rem 0 1.25rem;
-    }
-
-    .card {
-      padding: clamp(1.1rem, 3vw, 2rem);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      background: var(--surface);
-      box-shadow: 0 12px 30px rgba(5, 66, 67, 0.3);
-      backdrop-filter: blur(8px);
-    }
-
-    .card h2 {
-      margin-top: 0;
-      margin-bottom: 0.6rem;
-      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
-    }
-
-    .card p {
-      margin: 0.5rem 0 0;
-      color: var(--text-main);
-    }
-
-    .card a {
-      color: var(--accent);
-    }
-
-    .links-list {
-      list-style: none;
-      margin: 1.2rem 0 0;
-      padding: 0;
+    .bio-grid {
       display: grid;
-      gap: 0.75rem;
+      grid-template-columns: 280px 1fr;
+      gap: 2rem;
+      align-items: start;
     }
 
-    .links-list a {
-      display: block;
-      padding: 0.75rem 0.95rem;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      background: linear-gradient(135deg, var(--palette-teal), var(--palette-deep-teal));
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-
-    .links-list a:hover {
-      transform: translateY(-2px);
-      border-color: rgba(255, 255, 255, 0.8);
-      box-shadow: 0 10px 20px rgba(8, 68, 72, 0.25);
-    }
-
-    .links-list li:nth-child(1) a {
-      background: linear-gradient(135deg, #ff7f2f, var(--palette-orange));
-    }
-
-    .links-list li:nth-child(2) a {
-      background: linear-gradient(135deg, #f4ca53, var(--palette-amber));
-      color: #3f3100;
-    }
-
-    .links-list li:nth-child(3) a {
-      background: linear-gradient(135deg, var(--palette-teal), var(--palette-deep-teal));
-    }
-
-    .site-footer {
-      padding: 1.2rem 0 2rem;
-    }
-
-    .site-footer .container {
+    .section-label {
+      margin: 0 0 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
       color: var(--text-muted);
-      text-align: center;
+      font-weight: 700;
     }
 
-    @media (max-width: 560px) {
-      .site-header .container {
-        padding: 0.85rem;
+    .section-label::before {
+      content: "✦";
+      color: var(--accent);
+      margin-right: 0.55rem;
+    }
+
+    .profile-list,
+    .skills-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .profile-list li,
+    .skills-list li {
+      margin: 0 0 0.4rem;
+      color: #61616a;
+      font-size: 0.99rem;
+    }
+
+    .profile-list strong {
+      color: #404149;
+    }
+
+    .sidebar-block + .sidebar-block {
+      margin-top: 2.5rem;
+    }
+
+    .skills-list li::before {
+      content: "· ";
+      color: #b6b7bf;
+    }
+
+    .bio-text p {
+      margin: 0 0 0.95rem;
+      color: #6a6b72;
+      font-size: 1.08rem;
+      max-width: 66ch;
+    }
+
+    .bio-text strong {
+      color: #46474f;
+    }
+
+    .photo-grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .photo-card {
+      margin: 0;
+      border: 1px solid var(--border);
+      background: #f8f8fa;
+      overflow: hidden;
+    }
+
+    .photo-card img {
+      display: block;
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .social-links {
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .social-links a {
+      color: #57749a;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-note {
+      margin-top: 1.8rem;
+      color: #9a9ba4;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 900px) {
+      .bio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card img {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: calc(100% - 1.3rem);
+        padding: 1rem;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bio-text p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="site-title">Nina Pakshina</h1>
-      <nav class="site-nav" aria-label="Основная навигация">
-        <a class="nav-link nav-link-active" href="index.html">Главная</a>
-      </nav>
-    </div>
-  </header>
+  <main class="page">
+    <h1 class="bio-title">Biography</h1>
+    <hr class="bio-head-line" />
 
-  <main class="container content">
-    <section class="card">
-      <h2>Добро пожаловать</h2>
-      <p>
-        Golang/Python Developer.
-      </p>
-      <ul class="links-list">
-        <li>
-          <a href="https://www.youtube.com/@PakshinaNina" target="_blank" rel="noopener noreferrer">
-            YouTube
-          </a>
-        </li>
-        <li>
-          <a href="https://habr.com/ru/users/Ninako/" target="_blank" rel="noopener noreferrer">
-            Habr
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/PakshNina/" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-        </li>
-      </ul>
+    <section class="bio-grid">
+      <aside>
+        <div class="sidebar-block">
+          <h2 class="section-label">Personal info</h2>
+          <ul class="profile-list">
+            <li><strong>Name:</strong> Nina Pakshina</li>
+            <li><strong>Profession:</strong> Golang/Python Developer</li>
+            <li><strong>Email:</strong> pakshnina@gmail.com</li>
+            <li><strong>City:</strong> Moscow</li>
+          </ul>
+          <div class="social-links">
+            <a href="https://www.youtube.com/@PakshinaNina" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://habr.com/ru/users/Ninako/" target="_blank" rel="noopener noreferrer">Habr</a>
+            <a href="https://github.com/PakshNina/" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <div class="sidebar-block">
+          <h2 class="section-label">Main skills</h2>
+          <ul class="skills-list">
+            <li>Golang</li>
+            <li>Python</li>
+            <li>REST API</li>
+            <li>Microservices</li>
+            <li>SQL / PostgreSQL</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+      </aside>
+
+      <div>
+        <article class="bio-text">
+          <p><strong>Hello!</strong> I am Nina Pakshina, a backend developer focused on reliable services and clean architecture.</p>
+          <p>I enjoy building systems in Golang and Python, improving existing codebases, and creating practical tools that make products faster and easier to maintain.</p>
+          <p>Outside daily development, I write technical posts, share materials, and keep learning new engineering approaches.</p>
+        </article>
+
+        <section class="photo-grid" aria-label="Фотографии">
+          <figure class="photo-card">
+            <img src="img/photo.jpeg" alt="Фото Нины Пакшиной" />
+          </figure>
+          <figure class="photo-card">
+            <img src="img/photo2.jpeg" alt="Фото Нины Пакшиной в рабочей обстановке" />
+          </figure>
+        </section>
+      </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <small>© Nina Pakshina</small>
-    </div>
-  </footer>
+    <footer class="footer-note">© Nina Pakshina</footer>
+  </main>
 </body>
 </html>
