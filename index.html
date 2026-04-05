@@ -7,14 +7,19 @@
   <meta name="description" content="Персональная страница Nina Pakshina на GitHub Pages." />
   <style>
     :root {
-      --bg-start: #0f172a;
-      --bg-end: #1e293b;
-      --surface: rgba(255, 255, 255, 0.08);
-      --surface-strong: rgba(255, 255, 255, 0.14);
-      --text-main: #e2e8f0;
-      --text-muted: #94a3b8;
-      --accent: #22d3ee;
-      --border: rgba(255, 255, 255, 0.16);
+      --bg-start: #0a7872;
+      --bg-end: #1192a2;
+      --surface: rgba(255, 255, 255, 0.2);
+      --surface-strong: rgba(255, 255, 255, 0.3);
+      --text-main: #f8fbfb;
+      --text-muted: #d7ecec;
+      --accent: #f05a00;
+      --border: rgba(255, 255, 255, 0.45);
+      --palette-orange: #f05a00;
+      --palette-amber: #e8b126;
+      --palette-mist: #d4cddb;
+      --palette-teal: #0f8f99;
+      --palette-deep-teal: #0b7270;
     }
 
     *,
@@ -32,8 +37,8 @@
     body {
       font-family: "Inter", "Segoe UI", Arial, sans-serif;
       color: var(--text-main);
-      background: radial-gradient(circle at top right, #1d4ed8 0%, transparent 35%),
-        radial-gradient(circle at bottom left, #0ea5e9 0%, transparent 30%),
+      background: radial-gradient(circle at top right, rgba(240, 90, 0, 0.55) 0%, transparent 35%),
+        radial-gradient(circle at bottom left, rgba(232, 177, 38, 0.45) 0%, transparent 30%),
         linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
       line-height: 1.6;
     }
@@ -89,8 +94,8 @@
     }
 
     .nav-link-active {
-      background: rgba(34, 211, 238, 0.2);
-      border-color: rgba(34, 211, 238, 0.45);
+      background: rgba(232, 177, 38, 0.3);
+      border-color: rgba(240, 90, 0, 0.6);
     }
 
     .content {
@@ -102,7 +107,7 @@
       border: 1px solid var(--border);
       border-radius: 20px;
       background: var(--surface);
-      box-shadow: 0 12px 30px rgba(2, 6, 23, 0.28);
+      box-shadow: 0 12px 30px rgba(5, 66, 67, 0.3);
       backdrop-filter: blur(8px);
     }
 
@@ -134,17 +139,30 @@
       padding: 0.75rem 0.95rem;
       border: 1px solid var(--border);
       border-radius: 12px;
-      color: #dff7ff;
+      color: #ffffff;
       text-decoration: none;
       font-weight: 600;
-      background: linear-gradient(135deg, rgba(34, 211, 238, 0.15), rgba(6, 182, 212, 0.22));
+      background: linear-gradient(135deg, var(--palette-teal), var(--palette-deep-teal));
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
     .links-list a:hover {
       transform: translateY(-2px);
-      border-color: rgba(34, 211, 238, 0.55);
-      box-shadow: 0 10px 20px rgba(8, 145, 178, 0.22);
+      border-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 10px 20px rgba(8, 68, 72, 0.25);
+    }
+
+    .links-list li:nth-child(1) a {
+      background: linear-gradient(135deg, #ff7f2f, var(--palette-orange));
+    }
+
+    .links-list li:nth-child(2) a {
+      background: linear-gradient(135deg, #f4ca53, var(--palette-amber));
+      color: #3f3100;
+    }
+
+    .links-list li:nth-child(3) a {
+      background: linear-gradient(135deg, var(--palette-teal), var(--palette-deep-teal));
     }
 
     .site-footer {
