@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Биография | Nina Pakshina</title>
-  <meta name="description" content="Биография Nina Pakshina с контактами, навыками и фото." />
+  <title>Нина Пакшина | Golang Developer</title>
+  <meta name="description" content="Опыт Нины Пакшиной: Golang, backend, архитектура сервисов, безопасность и промышленная автоматизация." />
   <style>
     :root {
-      --bg: #f4f4f4;
+      --bg: #f3f3f5;
       --surface: #ffffff;
-      --text-main: #3b3b40;
-      --text-muted: #7d7d84;
+      --text-main: #35363d;
+      --text-muted: #6f7079;
       --border: #e9e9ee;
       --accent: #88a4cb;
     }
@@ -36,62 +36,40 @@
     }
 
     .page {
-      width: min(1120px, calc(100% - 3rem));
+      width: min(1020px, calc(100% - 2.4rem));
       margin: 2rem auto 3rem;
       background: var(--surface);
       border: 1px solid var(--border);
-      padding: clamp(1.25rem, 2.5vw, 2.5rem);
+      padding: clamp(1.2rem, 2.2vw, 2.2rem);
     }
 
     .bio-title {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.3rem, 5vw, 4rem);
+      font-size: clamp(2rem, 4vw, 3.4rem);
       color: #2f3036;
       letter-spacing: 0.01em;
     }
 
-    .bio-head-line {
+    .head-line {
       height: 1px;
       border: 0;
       background: var(--border);
-      margin: 1.1rem 0 1.6rem;
-    }
-
-    .bio-grid {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 2rem;
-      align-items: start;
-    }
-
-    .section-label {
-      margin: 0 0 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      font-weight: 700;
-    }
-
-    .section-label::before {
-      content: "✦";
-      color: var(--accent);
-      margin-right: 0.55rem;
+      margin: 1rem 0 1.3rem;
     }
 
     .social-icons {
       display: flex;
-      gap: 0.6rem;
-      margin-bottom: 1.25rem;
+      gap: 0.7rem;
+      margin-bottom: 1.1rem;
       flex-wrap: wrap;
     }
 
     .social-icon-link {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 10px;
       background: #fbfbfd;
       display: inline-flex;
       align-items: center;
@@ -107,102 +85,98 @@
     }
 
     .social-icon-link img {
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       object-fit: contain;
       display: block;
     }
 
-    .profile-list,
-    .skills-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    .about p {
+      margin: 0 0 0.85rem;
+      color: #5f6068;
+      font-size: 1.04rem;
+      max-width: 78ch;
     }
 
-    .profile-list li,
-    .skills-list li {
-      margin: 0 0 0.4rem;
-      color: #61616a;
-      font-size: 0.99rem;
-    }
-
-    .profile-list strong {
-      color: #404149;
-    }
-
-    .sidebar-block + .sidebar-block {
-      margin-top: 2.5rem;
-    }
-
-    .skills-list li::before {
-      content: "· ";
-      color: #b6b7bf;
-    }
-
-    .bio-text p {
-      margin: 0 0 0.95rem;
-      color: #6a6b72;
-      font-size: 1.08rem;
-      max-width: 66ch;
-    }
-
-    .bio-text strong {
+    .about strong {
       color: #46474f;
     }
 
-    .photo-grid {
-      margin-top: 2rem;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.2rem;
+    .section-title {
+      margin: 1.6rem 0 0.9rem;
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
     }
 
-    .photo-card {
+    .section-title::before {
+      content: "✦";
+      color: var(--accent);
+      margin-right: 0.5rem;
+    }
+
+    .job-list {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .job {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      background: #fbfbfc;
+    }
+
+    .job h3 {
       margin: 0;
+      font-size: 1.02rem;
+      color: #3f4048;
+    }
+
+    .job-meta {
+      margin: 0.25rem 0 0.55rem;
+      color: #83858f;
+      font-size: 0.91rem;
+    }
+
+    .job p {
+      margin: 0;
+      color: #5f6068;
+      font-size: 0.97rem;
+    }
+
+    .stack {
+      margin: 0.5rem 0 0;
+      color: #5f6068;
+      font-size: 0.93rem;
+    }
+
+    .photo-grid {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .photo {
       border: 1px solid var(--border);
       background: #f8f8fa;
       overflow: hidden;
     }
 
-    .photo-card img {
+    .photo img {
       display: block;
       width: 100%;
-      height: 340px;
+      height: 300px;
       object-fit: cover;
       object-position: center;
     }
 
-    .social-links {
-      margin-top: 1rem;
-      display: grid;
-      gap: 0.45rem;
-    }
-
-    .social-links a {
-      color: #57749a;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-
-    .social-links a:hover {
-      text-decoration: underline;
-    }
-
     .footer-note {
-      margin-top: 1.8rem;
+      margin-top: 1.5rem;
       color: #9a9ba4;
       font-size: 0.88rem;
-    }
-
-    @media (max-width: 900px) {
-      .bio-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .photo-card img {
-        height: 280px;
-      }
     }
 
     @media (max-width: 640px) {
@@ -215,7 +189,7 @@
         grid-template-columns: 1fr;
       }
 
-      .bio-text p {
+      .about p {
         font-size: 1rem;
       }
     }
@@ -223,72 +197,76 @@
 </head>
 <body>
   <main class="page">
-    <h1 class="bio-title">Nina Pakshina</h1>
-    <hr class="bio-head-line" />
+    <h1 class="bio-title">Нина Пакшина</h1>
+    <hr class="head-line" />
 
-    <section class="bio-grid">
-      <aside>
-        <div class="social-icons" aria-label="Социальные сети">
-          <a class="social-icon-link" href="https://www.youtube.com/@PakshinaNina" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            <img src="img/logo_youtube.png" alt="Логотип YouTube" />
-          </a>
-          <a class="social-icon-link" href="https://habr.com/ru/users/Ninako/" target="_blank" rel="noopener noreferrer" aria-label="Habr">
-            <img src="img/logo_habr.png" alt="Логотип Habr" />
-          </a>
-          <a class="social-icon-link" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-            <img src="img/logo_telegram.png" alt="Логотип Telegram" />
-          </a>
-          <a class="social-icon-link" href="https://github.com/PakshNina/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <img src="img/logo_github.png" alt="Логотип GitHub" />
-          </a>
-        </div>
+    <section class="social-icons" aria-label="Социальные сети">
+      <a class="social-icon-link" href="https://www.youtube.com/@PakshinaNina" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <img src="img/logo_youtube.png" alt="Логотип YouTube" />
+      </a>
+      <a class="social-icon-link" href="https://habr.com/ru/users/Ninako/" target="_blank" rel="noopener noreferrer" aria-label="Habr">
+        <img src="img/logo_habr.png" alt="Логотип Habr" />
+      </a>
+      <a class="social-icon-link" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+        <img src="img/logo_telegram.png" alt="Логотип Telegram" />
+      </a>
+      <a class="social-icon-link" href="https://github.com/PakshNina/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <img src="img/logo_github.png" alt="Логотип GitHub" />
+      </a>
+    </section>
 
-        <div class="sidebar-block">
-          <h2 class="section-label">Личная информация</h2>
-          <ul class="profile-list">
-            <li><strong>Имя:</strong> Nina Pakshina</li>
-            <li><strong>Профессия:</strong> Golang/Python Developer</li>
-            <li><strong>Email:</strong> pakshnina@gmail.com</li>
-            <li><strong>Город:</strong> Москва</li>
-          </ul>
-          <div class="social-links">
-            <a href="https://www.youtube.com/@PakshinaNina" target="_blank" rel="noopener noreferrer">Ютуб</a>
-            <a href="https://habr.com/ru/users/Ninako/" target="_blank" rel="noopener noreferrer">Habr</a>
-            <a href="https://github.com/PakshNina/" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
-        </div>
+    <article class="about">
+      <p><strong>Обо мне.</strong> Я backend-разработчик из Москвы с опытом более 15 лет в IT. Последние годы основной фокус - Golang и проектирование высоконагруженных сервисов в e-commerce.</p>
+      <p>С июля 2021 года работаю в Ленте как Golang Software Developer. За это время спроектировала и с нуля реализовала сервис статистики, который обрабатывает большой поток асинхронных данных и вычисляет сложную аналитику; сейчас этот сервис поддерживает команда из пяти человек.</p>
+      <p>Также участвую в запуске асинхронного оркестрационного сервиса для управления заказами: система состоит из независимых шагов и позволяет динамически менять флоу обработки заказов без доработок кода.</p>
+      <p>Ключевой стек: Golang, PostgreSQL, Redis, gRPC/jRPC/REST API, Kafka и Schema Registry, Kubernetes, GitLab, CI/CD, микросервисная архитектура.</p>
+      <p>До Go-направления развивалась как Python backend developer в Ленте (Django, DRF, Celery, GeoDjango, PostgreSQL, Docker, Kubernetes), разрабатывая решения для логистики и доставки.</p>
+      <p>Ранее работала в кибербезопасности (Инфосистемы Джет и Kaspersky), занималась проектированием и интеграцией security-систем, автоматизацией процессов и техническим обучением. Карьеру начинала в промышленной автоматизации: PLC/SCADA, низкоуровневое программирование и инженерные решения для производственных систем.</p>
+    </article>
 
-        <div class="sidebar-block">
-          <h2 class="section-label">Основные навыки</h2>
-          <ul class="skills-list">
-            <li>Golang</li>
-            <li>Python</li>
-            <li>REST API</li>
-            <li>Microservices</li>
-            <li>SQL / PostgreSQL</li>
-            <li>Docker</li>
-          </ul>
-        </div>
-      </aside>
+    <h2 class="section-title">Опыт</h2>
+    <section class="job-list" aria-label="Опыт работы">
+      <article class="job">
+        <h3>Lenta - Golang Software Developer</h3>
+        <p class="job-meta">июль 2021 - настоящее время · Москва</p>
+        <p>Разработка backend-сервисов для онлайн-ритейла, запуск асинхронных систем обработки данных и заказов, проектирование архитектуры под масштабирование и надежность.</p>
+        <p class="stack"><strong>Стек:</strong> Golang, PostgreSQL, Redis, gRPC, jRPC, REST, Kafka, Schema Registry, Kubernetes, GitLab CI/CD, Microservices.</p>
+      </article>
+      <article class="job">
+        <h3>Lenta - Python Software Developer</h3>
+        <p class="job-meta">июнь 2020 - июль 2021 · Москва</p>
+        <p>Разработка backend-решений для логистики и доставки: оптимизация процессов, интеграция внешних сервисов и поддержка бизнес-критичных потоков.</p>
+        <p class="stack"><strong>Стек:</strong> Python, Django, DRF, Celery, Redis, Memcache, GeoDjango, PostgreSQL, Docker, Kubernetes, CI/CD.</p>
+      </article>
+      <article class="job">
+        <h3>Инфосистемы Джет - Cyber Security Program Engineer</h3>
+        <p class="job-meta">август 2019 - июнь 2020 · Москва</p>
+        <p>Проектирование и внедрение решений информационной безопасности, интеграция стороннего ПО, автоматизация процессов и проверка надежности систем.</p>
+      </article>
+      <article class="job">
+        <h3>Kaspersky - Cyber Security Instructor</h3>
+        <p class="job-meta">октябрь 2018 - август 2019 · Москва</p>
+        <p>Проведение обучений и воркшопов по кибербезопасности, разработка учебных материалов и технических демонстраций.</p>
+      </article>
+      <article class="job">
+        <h3>Fastwel - PLC Engineer</h3>
+        <p class="job-meta">октябрь 2017 - октябрь 2018</p>
+        <p>Разработка ПО для PLC, автоматизированное тестирование и внедрение инженерных решений под требования заказчиков.</p>
+      </article>
+      <article class="job">
+        <h3>ProSoft - Application Engineer / Trainer</h3>
+        <p class="job-meta">октябрь 2013 - ноябрь 2017 · Москва</p>
+        <p>Техническая поддержка и пресейл, работа с клиентами, обучение, проведение презентаций и участие в автоматизационных проектах.</p>
+      </article>
+    </section>
 
-      <div>
-        <article class="bio-text">
-          <p><strong>Привет!</strong>
-          Меня зовут Нина Пакшина. Я уже более 15 лет в IT. Начинала в области промышленной автоматизации: программировала ПЛК и SCADA</p>
-          <p>2 года работала в области ИБ (Kaspersky и Инфосистемы Джет)</p>
-          <p>И последние 6 лет работаю в онлайн ритейле: Лента Онлайн. Мой основной язык Go, я пишу на нем 5 лет.</p>
-          <p>Помимо повседневной разработки, я пишу технические материалы, делюсь опытом и продолжаю изучать новые инженерные подходы.</p>
-        </article>
-
-        <section class="photo-grid" aria-label="Фотографии">
-          <figure class="photo-card">
-            <img src="img/photo.jpeg" alt="Фото Нины Пакшиной" />
-          </figure>
-          <figure class="photo-card">
-            <img src="img/photo2.jpg" alt="Фото Нины Пакшиной в рабочей обстановке" />
-          </figure>
-        </section>
-      </div>
+    <section class="photo-grid" aria-label="Фотографии">
+      <figure class="photo">
+        <img src="img/photo.jpeg" alt="Фото Нины Пакшиной" />
+      </figure>
+      <figure class="photo">
+        <img src="img/photo2.jpg" alt="Фото Нины Пакшиной в рабочей обстановке" />
+      </figure>
     </section>
 
     <footer class="footer-note">© Nina Pakshina</footer>
